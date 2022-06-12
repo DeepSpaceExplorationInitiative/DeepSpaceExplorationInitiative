@@ -22,14 +22,18 @@
 	name = "bioproduct dispenser"
 	ui_title = "Bioproduct Dispenser"
 	dispense_reagents = list(
-		"nutriment", "protein", "milk"
+		"nutriment", "protein", "milk", "macrocillin", "microcillin", "normalcillin"
 		)
 
 /obj/machinery/chemical_dispenser/biochemistry/full
 	spawn_cartridges = list(
 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/nutriment,
 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/protein,
-			/obj/item/weapon/reagent_containers/chem_disp_cartridge/milk
+			/obj/item/weapon/reagent_containers/chem_disp_cartridge/milk,
+			/obj/item/weapon/reagent_containers/chem_disp_cartridge/macrocillin,
+			/obj/item/weapon/reagent_containers/chem_disp_cartridge/microcillin,
+			/obj/item/weapon/reagent_containers/chem_disp_cartridge/normalcillin
+
 		)
 
 /obj/machinery/chemical_dispenser/ert/specialops

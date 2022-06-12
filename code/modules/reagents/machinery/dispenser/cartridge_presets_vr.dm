@@ -15,3 +15,8 @@
 	corophizine		spawn_reagent = "corophizine"
 	myelamine		spawn_reagent = "myelamine"
 	osteodaxon		spawn_reagent = "osteodaxon"
+
+	//Size chems
+	microcillin		spawn_reagent = "microcillin"
+	macrocillin		spawn_reagent = "macrocillin"
+	normalcillin	spawn_reagent = "normalcillin"
