@@ -214,6 +214,7 @@ var/list/channel_to_radio_key = new
 	//Handle language-specific verbs and adverb setup if necessary
 	if(!whispering) //Just doing normal 'say' (for now, may change below)
 		verb = say_quote(message, first_piece.speaking)
+		w_not_heard = "[verb] something"
 	else if(whispering && first_piece.speaking.whisper_verb) //Language has defined whisper verb
 		verb = first_piece.speaking.whisper_verb
 		w_not_heard = "[verb] something"
@@ -352,7 +353,7 @@ var/list/channel_to_radio_key = new
 
 			if(M && src) //If we still exist, when the spawn processes
 				//VOREStation Add - Ghosts don't hear whispers
-				if(whispering && !is_preference_enabled(/datum/client_preference/whisubtle_vis) && isobserver(M) && !M.client?.holder)
+				if(!is_preference_enabled(/datum/client_preference/whisubtle_vis) && isobserver(M) && !M.client?.holder)
 					M.show_message("<span class='game say'><span class='name'>[src.name]</span> [w_not_heard].</span>", 2)
 					return
 				//VOREStation Add End
