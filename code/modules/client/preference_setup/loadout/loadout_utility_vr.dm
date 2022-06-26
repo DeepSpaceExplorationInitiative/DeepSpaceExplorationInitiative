@@ -79,3 +79,13 @@
 	display_name = "podzu music player"
 	path = /obj/item/device/walkpod
 	cost = 2
+
+/datum/gear/utility/sizegun
+	display_name = "size gun"
+	path = /obj/item/weapon/gun/energy/sizegun
+	cost = 0
+
+/datum/gear/utility/slowsizegun
+	display_name = "slow size gun"
+	path = /obj/item/device/slow_sizegun
+	cost = 0

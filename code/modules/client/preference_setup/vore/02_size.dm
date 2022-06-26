@@ -37,7 +37,7 @@
 	pref.weight_gain		= sanitize_integer(pref.weight_gain, WEIGHT_CHANGE_MIN, WEIGHT_CHANGE_MAX, initial(pref.weight_gain))
 	pref.weight_loss		= sanitize_integer(pref.weight_loss, WEIGHT_CHANGE_MIN, WEIGHT_CHANGE_MAX, initial(pref.weight_loss))
 	pref.fuzzy				= sanitize_integer(pref.fuzzy, 0, 1, initial(pref.fuzzy))
-	if(pref.size_multiplier == null || pref.size_multiplier < RESIZE_TINY || pref.size_multiplier > RESIZE_HUGE)
+	if(pref.size_multiplier == null || pref.size_multiplier < RESIZE_MINIMUM || pref.size_multiplier > RESIZE_MAXIMUM)
 		pref.size_multiplier = initial(pref.size_multiplier)
 
 /datum/category_item/player_setup_item/vore/size/copy_to_mob(var/mob/living/carbon/human/character)
@@ -58,8 +58,8 @@
 
 /datum/category_item/player_setup_item/vore/size/OnTopic(var/href, var/list/href_list, var/mob/user)
 	if(href_list["size_multiplier"])
-		var/new_size = input(user, "Choose your character's size, ranging from 25% to 200%", "Set Size") as num|null
-		if (!ISINRANGE(new_size,25,200))
+		var/new_size = input(user, "Choose your character's size, ranging from 10% to 600%", "Set Size") as num|null
+		if (!ISINRANGE(new_size,10,600))
 			pref.size_multiplier = 1
 			to_chat(user, "<span class='notice'>Invalid size.</span>")
 			return TOPIC_REFRESH_UPDATE_PREVIEW
